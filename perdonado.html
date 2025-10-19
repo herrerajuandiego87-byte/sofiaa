@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¡Gracias!</title>
+  <style>
+    body {
+      background: linear-gradient(to top right, #ffe6f2, #e6ffe6);
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      color: #4caf50;
+      margin-top: 150px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #ff66b2;
+      text-shadow: 1px 1px 4px #ffcce6;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    .heart {
+      position: fixed;
+      font-size: 24px;
+      color: #ff66b2;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-800px) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <h1>🥰 ¡Gracias por perdonarme! 🥰</h1>
+  <p>Y si seguimos hablando like before? only pece and love 💗</p>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerText = '💞';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 400);
+  </script>
+</body>
+</html>
